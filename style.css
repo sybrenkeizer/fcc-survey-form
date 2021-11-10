@@ -1,309 +1,384 @@
-/* Table of contents
+/* TABLE OF CONTENT
 
-1.  Global styles
-1.1 Typography & color
-
-2.  Layout
-2.1 Container
-2.2 Header
-2.3 Form
-2.4 Labels
-2.5 Radio & Checkbox
-
-4. Components
-
-5. Responsiveness
+1   GLOBAL STYLES
+2   LAYOUT STYLES
+3   COMPONENTS
+4   RESPONSIVENESS
 
 */
 
 
 
 /*  ===============
-    1 Global styles
+    1 GLOBAL STYLES
     =============== */
 
 *,
 *::before,
-*::after
-{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body::before /* overlay */
-{
-  content: '';
-  position: fixed;
-  top: 0;
-  /* right: 0;
-  bottom: 0;
-  left: 0; */
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5), 
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
     ),
-    url(https://get.wallhere.com/photo/monochrome-nature-musical-instrument-technology-piano-keyboard-string-instrument-electronic-device-electronic-instrument-musical-keyboard-digital-piano-player-piano-electric-piano-fortepiano-celesta-computer-component-87559.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+    /* url(https://get.wallhere.com/photo/monochrome-nature-musical-instrument-technology-piano-keyboard-string-instrument-electronic-device-electronic-instrument-musical-keyboard-digital-piano-player-piano-electric-piano-fortepiano-celesta-computer-component-87559.jpg); */
+    url(img/piano_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+:root {
+    --ff-primary: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;
+    --ff-secondary: Verdana,Geneva,sans-serif;
 
+    --fw-reg: 200;
+    --fw-bold: 600;
 
-/* === 1.1 TYPOGRAPHY & COLOR === */
+    --clr-light: #fff;
+    --clr-dark: #000;
+    --clr-accent: #444;
+    --clr-form: rgba(255, 255, 255, .7);
 
-:root
-{
-  --ff-primary: Arial, Helvetica Neue, Helvetica, sans-serif;
-  --ff-secondary: ;
-
-  --fw-reg: 200;
-  --fw-bold: 600;
-
-  --clr-light: #fff;
-  --clr-dark: #000;
-  --clr-accent: rgb(126, 191, 152);
-
-  --fs-h1: 2.2rem;
-  --fs-h2: 2rem;
-  --fs-h3: 1.5rem;
-  --fs-p: 1.1rem;
-  --fs-body: 1.1rem;
-  --fs-label: 1.1rem;
+    --fs-h1: 2.2rem;
+    --fs-h2: 1.8rem;
+    --fs-h3: 1.5rem;
+    --fs-p: 1.05rem;
+    --fs-body: 1.05rem;
+    --fs-small: 0.9rem
 }
 
-body
-{
-  font-family: var(--ff-primary); 
-  font-size: var(--fs-body);
-  font-weight: var(--fw-reg);
-  line-height: 1.6;
-  color: #000000;
+@media (max-width: 50em) {
+    :root {
+        --fs-h1: 2rem;
+        --fs-h2: 1.6rem;
+        --fs-h3: 1.3rem;
+        --fs-p: 0.95rem;
+        --fs-body: 0.95rem;
+        --fs-small: 0.85rem
+    }
+}
+
+@media (max-width: 30em) {
+    :root {
+    --fs-h1: 1.8rem;
+    --fs-h2: 1.6rem;
+    --fs-h3: 1.3rem;
+    --fs-p: 0.85rem;
+    --fs-body: 0.85rem;
+    --fs-small: 0.8rem
+    }
+}
+
+body {
+    font-size: var(--fs-body);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-reg);
+    color: var(--clr-dark);
 }
 
 h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) }
-p { font-size: var(--fs-h4) }
+p { font-size: var(--fs-p) }
 
-/* ::placeholder
-{
-  font-style: italic;
-  font-size: 0.9rem;
-} */
 
 
 /*  ===============
     2 LAYOUT STYLES
     =============== */
 
+.wrapper {
+    max-width: 38em;
+    margin: auto;
+}
 
-/* === 2.1  CONTAINER === */
+.head--primary {
+    margin: 2.5em 1.5em;
+    text-align: center;
+    color: var(--clr-light);
+    text-shadow: 1px 1px 2px var(--clr-dark);
+}
 
-.container
-{
-  max-width: 30em;
-  margin: auto;
+.head__headline-primary {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+}
+
+.fg__input:focus {
+    outline: none;
+}
+
+::placeholder {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+}
+
+/* remove arrow at number input */
+.fg__input::-webkit-outer-spin-button,
+.fg__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* remove arrow at number input */
+.fg__input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.container {
+    background-color: var(--clr-form);
+    padding: 0.8em 1.5em 1.4em 1.5em;
+    margin: 2em 1.4em;
+    font-size: var(--fs-body);
+    border-radius: 0.3rem;
+}
+
+.fieldset {
+    display: grid;
+    gap: 2em;
+    padding: 1.5em;
+    border: 0.2em solid var(--clr-dark);
+    border-radius: 0.25rem;
+}
+
+.legend {
+    padding-inline: 0.3em;
+    margin-left: 0.7em;
+    font-size: 1.5em;
+}
+
+.fieldset--personal {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+/* float label */
+.fg--text,
+.fg--email,
+.fg--number,
+.fg--select {
+    position: relative;
+    width: 100%;
+    border-bottom: 0.1em solid var(--clr-dark);
+    margin-inline: auto;
+}
+
+.fg__input {
+    background: transparent;
+    border: none;
+    font-size: var(--fs-body);
+    font-family: var(--ff-secondary);
+}
+
+/* FLOAT LABEL*/
+.fg__label--text,
+.fg__label--email,
+.fg__label--number,
+.fg__label--select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-inline: auto;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* FLOAT LABEL - INPUT */
+.fg__input--text:focus ~ label,
+.fg__input--text:valid ~ label,
+.fg__input--email:focus ~ label,
+.fg__input--email:valid ~ label,
+.fg__input--number:focus ~ label,
+.fg__input--number:valid ~ label,
+.fg__select:focus ~ label,
+.fg__select:valid ~ label {
+    font-size: 0.95em;
+    font-style: italic;
+    color: var(--clr-accent);
+    transform: translateY(-1.3em);
+
+}
+
+.fg__select {
+    background: transparent;
+    border: none;
+    font-size: var(--fs-body);
+    font-family: var(--ff-secondary);
+    cursor: pointer;
+    appearance: none;
+    transition: 0.7s;
+    opacity: 0;
+}
+
+/* FLOAT LABEL - SELECT*/
+.fg__select:focus,
+.fg__select:valid {
+    opacity: 1;
+}
+
+span.clue {
+    display: inline-block;
+    font-size: var(--fs-small);
+    font-style: italic;
+    font-weight: var(--fw-reg);
+}
+.fg__label--radio,
+.fg__label--checkbox {
+    font-weight: var(--fw-bold);
+    cursor: auto;
+}
+
+/* FLOAT LABEL - RADIO-CHECKBOX */
+.fg__rg__radio-box,
+.fg__cg__checkbox-box {
+    position: relative;
+    width: 100%;
+    margin-top: 0.8em;
+}
+
+.fg__rg__input,
+.fg__cg__input,
+.fg__ta__input {
+    margin-top: 0.25em;
+    border: 1px solid black;
+    outline: none;
+}
+
+/* FLOAT LABEL - RADIO-CHECKBOX */
+.fg__rg__label,
+.fg__cg__label {
+    position: absolute;
+    margin-left: 0.5em;
+    transition: 0.4s;
+}
+
+/* FLOAT LABEL - RADIO-CHECKBOX */
+.fg__rg__input:focus ~ .fg__rg__label,
+.fg__cg__input:focus ~ .fg__cg__label {
+    font-style: italic;
+    transform: translateX(0.7em);
+}
+
+.fg__rg__input,
+.fg__cg__input,
+.fg__rg__label,
+.fg__cg__label,
+.fg__label-textarea {
+    cursor: pointer
+}
+
+.fg__ta__input {
+    height: 8em;
+    width: 100%;
+    padding: 0.2em 0.4em;
+    margin-top: 0.8em;
+    border: 2px solid var(--clr-dark);
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(img/music_notes.png);
+    /* url("https://freepngimg.com/thumb/music/24577-1-music-transparent-image.png"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+    resize: vertical;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.fg__ta__input:focus {
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(img/music_notes.png);
+    /* url("https://freepngimg.com/thumb/music/24577-1-music-transparent-image.png"); */
+    cursor: auto;
+}
+
+.fg__ta__input::placeholder {
+    padding-top: 3em;
+    text-align: center;
+    color: black;
 }
 
 
-/* === 2.2 HEADER === */
-
-.header
-{
-  color: white;
-  text-align: center;
-  text-shadow: 2px 2px black;
-  margin-block: 2.2em;
-}
-
-.header p
-{
-  font-size: 1.15em;
-}
 
 
-/* === 2.3 FORM === */
-
-form
-{
-  margin: auto;
-  padding: 2.2em 2.8em;
-  border-radius: 0.5em;
-  box-shadow: 0px 2px 10px 0 black;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.form-group
-{
-  margin-bottom: 1em;
-}
-
-.form-control
-{
-  display: block;
-  width: 100%;
-  height: 1.5em;
-  background: rgba(0,0,0,0);
-  border: none;
-  color: var(--clr-dark);
-  font-size: var(--fs-body);
-  padding-left: 0.3em;
-  border-bottom: 3px solid var(--clr-dark);
-}
-
-.form-control:focus
-{
-  outline: 0;
-}
-
-select
-{
-  appearance: none;
-}
-
-textarea
-{
-  box-shadow: 0px 0px 10px 1px black;
-  border: 1px solid black;
-  background-color: hsl(60, 20%, 90%);
-}
-
-textarea:focus
-{
-  box-shadow: 0px 0px 15px 4px black;
-  border-color: black;
-  outline: 0;
-}
-
-.input-textarea
-{
-  min-height: 120px;
-  width: 100%;
-  padding: 0.5rem;
-  resize: vertical;
-  border-radius: 0.25rem;
-  margin-bottom: 1rem;
-}
-
-.name
-{
-  display: flex;
-  justify-content: space-between;
-  gap: 3em;
-}
-
-.form-group
-{
-  position: relative;
-  margin-block: 1em;
-}
-
-form > .name > .form-group > input
-{
-  position: relative;
-  transition: opacity 0.7s ease-in;
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,1)); 
-  opacity: 0;
-}
-
-form > .name > .form-group > label
-{
-  position: absolute;
-  bottom: 0em;
-  left: 0;
-  transition: 0.4s;
-  pointer-events: none;
-}
-
-form > .name > .form-group > input:focus ~ label,
-form > .name > .form-group > input:valid ~ label
-{
-  transform: translateY(-2em);
-  font-size: 0.8em;
-  color: var(--clr-dark);
-  font-weight: var(--fw-reg);
-} 
-
-form > .name > .form-group > input:focus,
-form > .name > .form-group > input:valid
-{
-  border-bottom: none;
-  border-bottom: 1px solid white;
-  opacity: 1;
-}
-
-
-
-
-
-/* === 2.4 LABELS === */
-
-
-label
-{
-  font-size: var(--fs-label);
-}
-
-.clue
-{
-  font-size: 0.8em;
-  font-weight: 200;
-  white-space: nowrap;
-  margin-left: 0.5rem;
-}
-
-
-
-/* === 2.5 RADIO & CHECKBOX === */
-
-.radio-recommend-group,
-.checkbox-improvements-group,
-.radio-gender-group
-{
-  font-size: 0.85em;
-}
-
-.input-radio,
-.input-checkbox
-{
-  display: inline-block;
-  margin: 0.2em;
-}
-
-
-
-/*  ============
+/*  ================
     3 COMPONENTS
-    ============ */
+    ================ */
 
-.submit-button
-{
-  display: block;
-  width: 100px;
-  margin: auto;
-  padding: 0.8rem 0.8rem;
-  border-radius: 0.5rem;
-  background-color: black;
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 1);
-  border: 0px solid black;
-  font-size: 1em;
-  font-weight: 600;
-  cursor: grab;
-  color: white;
-  transition: 0.3s;
+/* === 3.1 SUBMIT BUTTON === */
+
+
+.button {
+    display: inline-block;
+    position: relative;
+    border: none;
+    vertical-align: middle;
+    font-family: var(--ff-primary);
+    font-size: 1.1em;
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
 }
 
-.submit-button:hover
-{
-  background-color: rgba(0,0,0,0.7);
-  color: white;
-  border: 0px solid rgba(0,0,0,0.1);
-  box-shadow: 0px 0px 10px 4px black;
+.submit-button {
+    padding: 0.6em 1em;
+    background: var(--clr-accent);
+    border: 2px solid var(--clr-dark);
+    color: var(--clr-light);
+    transform-style: preserve-3d;
+    transition: .15s cubic-bezier(0, 0, .6, 1);
+    border-radius: 0.25em;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(40,40,40,0.2);
+    box-shadow: 0 0 0 1px rgba(40,40,40,0.2), 0 0 0 0 rgba(40,40,40,0.1);
+    transform: translate3d(0, 0.4em, -0.2em);
+    transition: .15s cubic-bezier(0, 0, .5, 1);
+    border-radius: inherit;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    transform: translate(0, 0.3em);
+}
+
+.submit-button:hover::before,
+.submit-button:focus::before {
+    box-shadow: 0 0 0 1px rgba(40,40,40,0.2), 0 0 0 0 rgba(40,40,40,0.2);
+    transform: translate3d(0, .2em, -0.5em);
+}
+
+.submit-button:active {
+    transform: translate(0, 0.6em);
+}
+
+.submit-button:active::before {
+    box-shadow: 0 0 0 1px rgba(40,40,40,0.4), 0 0 rgba(40,40,40,0.3);
+    transform: translate3d(0, 0em, -0.1em);
 }
 
 
@@ -312,46 +387,47 @@ label
     4 RESPONSIVENESS
     ================ */
 
-/* 
-@media (min-width: 500px)
-{
-  .container
-  {
-    max-width: 500px;
-  }
+
+@media (max-width: 37em) {
+    .fieldset--personal {
+        grid-template-columns: 1fr;
+        grid-template-rows: 8fr;
+    }
 }
 
-@media (min-width: 768px)
-{
-  .container
-  {
-    max-width: 500px;
-  }
+@media (max-width: 31em) {
+    .container {
+        margin-inline: 0;
+    }
+
+    .fg__rg__radio-box,
+    .fg__cg__radio-box {
+        margin-top: 0.3em;
+    }
 }
 
-@media (min-width: 400px)
-{
-  form
-  {
-    padding: 1.5rem 2rem;
-    margin: auto;
-    max-width: 90%;
-  }
+@media (max-width: 24.8em) {
+    .container {
+        padding: 0.5em 1em 1em 1em;
+    }
 
-  body
-  {
-    font-size: 1.1rem;
-  }
+    .fieldset {
+        padding: 1em;
+    }
+}
 
-  .header
-  {
-    font-size: 1.1rem;
-  }
+@media (max-width: 21.9em) {
+    /* FLOAT LABEL */
+    .fg__label--select {
+        top: -0.4em;
+    }
 
-  .submit-button
-  {
-    width: 130px;
-    padding: 0.8rem 0.8rem;
-    font-size: 1.1em;
-  }
-} */
+    .fg__input--instrument {
+        padding-top: 0.7em;
+    }
+
+    .fg__input--instrument:focus ~ .fg__label,
+    .fg__input--instrument:valid ~ .fg__label {
+        transform: translateY(-0.3em);
+    }
+}

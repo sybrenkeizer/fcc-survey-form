@@ -1,164 +1,255 @@
+<!--
+
+TABLE OF CONTENT
+1 HEADER
+2 PERSONAL INFO
+3 MUSICAL EXPERIENCE
+4 FEEDBACK
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
+    <title>Online Music Class Survey</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="music class survey form">
-    <meta name="keywords" content="survey form music class">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="description" content="online music class survey form">
+    <meta name="keywords" content="music class survey form, music class online feedback">
     <link rel="stylesheet" href="style.css">
-    <title>Music Class Survey Form</title>
-  </head>
+</head>
+<body>
+    <div class="wrapper">
 
-  <body>
-    <div class="container">
+<!-- 1 HEADER -->
 
-      <header class="header">
-        <h1 id="title" class="header--title">Music Class Survey Form</h1>
-        <p id="headline" class="header--headline">Thank you for taking the time to help us improve your music lessons</p>
-      </header>
+        <header class="head head--primary">
+            <h1 class="header head__header--primary">Online Music Class Survey Form</h1>
+            <p class="headline head__headline-primary">Thank you for taking the time to help us improve your music lessons</p>
+        </header>
+        <main>
+            <form class="survey-form" id="survey-form" action="action_page.php" method="post" autocomplete="off">
 
-      <form id="survey-form" action="/form/submit" method="post" autocomplete="off">
+<!-- 2 PERSONAL INFO -->
+                <div class="container container--personal">
+                    <fieldset class="fieldset fieldset--personal">
+                        <legend class="legend legend--personal">Personal Information</legend>
+                        <div class="form-group fg--text">
+                            <input type="text" name="first-name" id="first-name" class="fg__input fg__input--text" required="required">
+                            <label class="fg__label fg__label--text" for="first-name">First name</label>
+                        </div>
+                        <div class="form-group fg--text">
+                            <input type="text" name="last-name" id="last-name" class="fg__input fg__input--text" required="required">
+                            <label class="fg__label fg__label--text" for="last-name">Last name</label>
+                        </div>
+                        <div class="form-group fg--email">
+                            <input type="email" name="email" id="email" class="fg__input fg__input--email" required="required">
+                            <label class="fg__label fg__label--email" for="email">Email address</label>
+                        </div>
+                        <div class="form-group fg--number">
+                            <input type="number" name="phone" id="phone" class="fg__input fg__input--number" required="required">
+                            <label class="fg__label fg__label--number" for="phone">Phone number</label>
+                        </div>
+                        <div class="form-group fg--number">
+                            <input type="number" name="age" id="age" class="fg__input fg__input--number" required="required" min="1" max="99">
+                            <label class="fg__label fg__label--number" for="age">Age</label>
+                        </div>
+                        <div class="form-group fg--select">
+                            <select name="gender" id="gender" class="fg__select fg__input" required="required">
+                                <option disabled selected value>Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="gender" class="fg__label fg__label--select">Gender</label>
+                        </div>
+                        <div class="form-group fg--select">
+                            <select name="nationality" id="nationality" class="fg__select fg__input" required="required">
+                                <option disabled selected value>Select your nationality</option>
+                                <option value="india">India</option>
+                                <option value="nepal">Nepal</option>
+                                <option value="netherlands">Netherlands</option>
+                                <option value="france">France</option>
+                            </select>
+                            <label for="nationality" class="fg__label fg__label--select">Nationality</label>
+                        </div>
+                        <div class="form-group fg--select">
+                            <select name="occupation" id="occupation" class="fg__select fg__input" required="required">
+                                <option disabled selected value>Select your occupation</option>
+                                <option value="student">Student</option>
+                                <option value="fullTimeJob">Full time job</option>
+                                <option value="partTimeJob">Part time job</option>
+                                <option value="noJob">No job</option>
+                                <option value="caregiver">Caregiver</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="occupation" class="fg__label fg__label--select">Occupation</label>
+                        </div>
+                    </fieldset>
+                </div>
 
-        <div class="name">
-          <div class="form-group">
-            <input type="text" name="first-name" id="first-name" class="form-control" required="required">
-            <label id="label-first-name" for="first-name">First Name</label>
-          </div>
-            
-          <div class="form-group">
-            <input type="text" name="last-name" id="last-name" class="form-control" required="required">
-            <label for="last-name">Last Name</label>
-          </div>
-        </div>
+<!-- 3 MUSICAL EXPERIENCE -->
+                <div class="container container--musical">
+                    <fieldset class="fieldset fieldset--musical">
+                        <legend class="legend legend--musical">Musical Experience</legend>
+                        <div class="form-group fg--select">
+                            <select name="instrument" id="instrument" class="fg__select fg__input fg__input--instrument" required="required">
+                                <option disabled selected value>Select your instrument</option>
+                                <option value="bansuri">Bansuri</option>
+                                <option value="cajon">Cajon</option>
+                                <option value="didgeridoo">Didgeridoo</option>
+                                <option value="djembe">Djembe</option>
+                                <option value="guitar">Guitar</option>
+                                <option value="harp">Harp</option>
+                                <option value="mouthHarp">MouthHarp</option>
+                                <option value="piano">Piano</option>
+                                <option value="violin">Violin</option>
+                            </select>
+                            <label for="instrument" class="fg__label fg__label--select">In what music instrument do you take lessons?</label>
+                        </div>
+                        <div class="form-group fg--select">
+                            <select name="period" id="period" class="fg__select fg__input" required="required">
+                                <option disabled selected value>Select period</option>
+                                <option value="1-3Months">1 - 3 months</option>
+                                <option value="3-6Months">3 - 6 months</option>
+                                <option value="6-12Months">6 - 12 months</option>
+                                <option value="1Year">1 year</option>
+                                <option value="2Year">2 years</option>
+                                <option value="3Year+">3 years +</option>
+                            </select>
+                            <label for="period" class="fg__label fg__label--select">For how long are you taking lessons?</label>
+                        </div>
+                        <div class="form-group fg--radio">
+                            <label id="prior-experience" class="fg__label fg__label--radio">Did you have any experience prior to our online classes?</label>
+                            <div class="fg--radio-group">
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="prior-experience" id="yes-experience" class="fg__rg__input" value="yes">
+                                    <label for="yes-experience" class="fg__rg__label">Yes</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="prior-experience" id="no-experience" class="fg__rg__input" value="no">
+                                    <label for="no-experience" class="fg__rg__label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group fg--radio">
+                            <label id="other-instrument" class="fg__label fg__label--radio">Do you play any other instrument(s)?</label>
+                            <div class="fg--radio-group">
+                            <div class="fg__rg__radio-box">
+                                    <input type="radio" name="other-instrument" id="yes-instrument" class="fg__rg__input" value="yes">
+                                    <label for="yes-instrument" class="fg__rg__label">Yes</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="other-instrument" id="no-instrument" class="fg__rg__input" value="no">
+                                    <label for="no-instrument" class="fg__rg__label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
 
-        <div class="form-group">
-          <input type="email" name="email" id="email" class="form-control" required="required">
-          <label for="email">Email</label>
-        </div>
+<!-- 4 FEEDBACK -->
+                <div class="container container--feedback">
+                    <fieldset class="fieldset fieldset--feedback">
+                        <legend class="legend legend--feedback">Feedback</legend>
+                        <div class="form-group fg--select">
+                            <select name="rate" id="rate" class="fg__select fg__input" required="required">
+                                <option disabled selected value>Select Rating</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="nice">Quiet nice</option>
+                                <option value="ok">Ok</option>
+                                <option value="not-great">Not so great</option>
+                                <option value="terrible">Terrible</option>
+                            </select>
+                            <label for="rate" class="fg__label fg__label--select">How would you rate your lessons?</label>
+                        </div>
+                        <div class="form-group fg--radio">
+                            <label id="recommend" class="fg__label fg__label--radio">Would you recommend our classes to a friend?</label>
+                            <div class="fg--radio-group">
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="recommend" id="absolutely" class="fg__rg__input" value="absolutely">
+                                    <label for="absolutely" class="fg__rg__label">Absolutely</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="recommend" id="maybe" class="fg__rg__input" value="maybe">
+                                    <label for="maybe" class="fg__rg__label">Maybe</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="recommend" id="better-not" class="fg__rg__input" value="no">
+                                    <label for="better-not" class="fg__rg__label">Better not</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group fg--radio">
+                            <label id="if-improved" class="fg__label fg__label--radio">Do you think think there are things that should be improved?</label>
+                            <div class="fg--radio-group">
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="if-improved" id="yes-improved" class="fg__rg__input" value="yes">
+                                    <label for="yes-improved" class="fg__rg__label">Yes</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="if-improved" id="no-improved" class="fg__rg__input" value="no">
+                                    <label for="no-improved" class="fg__rg__label">No</label>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="form-group">
-          <label for="age">Age<span class="clue">(optional)</span></label>
-          <input type="number" min="1" max="99" name="age" id="age" class="form-control" required="required">
-        </div>
+                        <div class="form-group fg--checkbox">
+                            <label id="improve" class="fg__label fg__label--checkbox">What would you like to see improved?</label>
+                            <span class="clue">Select all that apply</span>
+                            <div class="fg--checkbox-group">
+                                <div class="fg__cg__checkbox-box">
+                                    <input type="checkbox" name="what-improve" id="class-connectivity" class="fg__cg__input" value="connectivity">
+                                    <label for="class-connectivity" class="fg__cg__label">Class connectivity</label>
+                                </div>
+                                <div class="fg__cg__checkbox-box">
+                                    <input type="checkbox" name="what-improve" id="teaching-style" class="fg__cg__input" value="teaching-style">
+                                    <label for="teaching-style" class="fg__cg__label">Teaching style</label>
+                                </div>
+                                <div class="fg__cg__checkbox-box">
+                                    <input type="checkbox" name="what-improve" id="class-schedule" class="fg__cg__input" value="class-schedule">
+                                    <label for="class-schedule" class="fg__cg__label">Class schedule</label>
+                                </div>
+                                <div class="fg__cg__checkbox-box">
+                                    <input type="checkbox" name="what-improve" id="practice-possibilities" class="fg__cg__input" value="practice-possibilities">
+                                    <label for="practice-possibilities" class="fg__cg__label">Practice possibilities</label>
+                                </div>
+                                <div class="fg__cg__checkbox-box">
+                                    <input type="checkbox" name="what-improve" id="duration-lessons" class="fg__cg__input" value="lesson-duration">
+                                    <label for="duration-lessons" class="fg__cg__label">Duration of the lessons</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group fg--radio">
+                            <label id="value-money" class="fg__label fg__label--radio">Do we offer you value for money?</label>
+                            <div class="fg--radio-group">
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="value-money" id="yes-value" class="fg__rg__input" value="yes">
+                                    <label for="yes-value" class="fg__rg__label">Yes</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="value-money" id="somewhat-value" class="fg__rg__input" value="sopmewhat">
+                                    <label for="somewhat-value" class="fg__rg__label">Somewhat</label>
+                                </div>
+                                <div class="fg__rg__radio-box">
+                                    <input type="radio" name="value-money" id="no-value" class="fg__rg__input" value="no">
+                                    <label for="no-value" class="fg__rg__label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group fg--textarea">
+                            <label class="fg__label fg__label-textarea" for="comments">Do you have any comments or suggestions? Please let us know.</label>
+                            <textarea name="comments" id="comments" class="fg__input fg__ta__input" rows="8" placeholder="Enter your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="button submit-button">Submit</button>
 
-        <div class="form-group">
-          <label for="occupation">Occupation</label>
-          <select name="occupation" id="occupation" class="form-control select-control" required="required">
-            <option disabled selected value>Select your current occupation</option>
-            <option value="student">Student</option>
-            <option value="fullTimeJob">Full time job</option>
-            <option value="partTimeJob">Part time job</option>
-            <option value="noJob">No job</option>
-            <option value="caregiver">Caregiver</option>
-            <option value="other">Other</option>
-            <option value="preferNotToSay">Prefer not to say</option>
-          </select>
-        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </main>
+    </div> <!-- WRAPPER CLOSURE -->
+</body>
 
-        <div class="form-group">
-          <label id="gender-label">Select your gender</label>
-          <div class="radio-gender-group">
-            <label>
-              <input type="radio" name="gender" class="input-radio" value="male" required>Male
-            </label>
-            <label>
-              <input type="radio" name=gender class="input-radio" value="female">Female
-            </label>
-            <label>
-              <input type="radio" name="gender" class="input-radio" value="other">Other
-            </label>
-          </div>
-        </div>
 
-        <div class="form-group">
-          <label id="typeClass-label" for="typeClass">In what music instrument do you have class in?</label>
-          <select name="typeClass" id="typeClass" class="form-control" required>
-            <option disabled selected value>Select instrument</option>
-            <option value="guitar">Guitar</option>
-            <option value="harp">Harp</option>
-            <option value="mouthHarp">Mouth-harp</option>
-            <option value="djembe">Djembe</option>
-            <option value="cajon">Cajon</option>
-            <option value="piano">Piano</option>
-            <option value="didgeridoo">Didgeridoo</option>
-            <option value="bansuri">Bansuri</option>
-            <option value="violin">Violin</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label id="periodClass-label" for="periodClass">For how long are you taking music lessons with us?</label>
-          <select name="periodClass" id="periodClass" class="form-control" required>
-            <option disabled selected value>Select period</option>
-            <option value="1-3Months">1 - 3 months</option>
-            <option value="3-6Months">3 - 6 months</option>
-            <option value="6-12Months">6 - 12 months</option>
-            <option value="1Year">1 year</option>
-            <option value="2Year">2 year</option>
-            <option value="3Year+">3 year +</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label id="rateClass-label" for="rateClass">How would you rate the lessons?</label>
-          <select name="rateClass" id="rateClass" class="form-control" required>
-            <option disabled selected value>Select a rating</option>
-            <option value="iLoveIt">I love it!</option>
-            <option value="itsGreat">It's Great</option>
-            <option value="notTooBad">Not too bad</option>
-            <option value="aBitDisappointing">A bit disappointing</option>
-            <option value="trueTorture">True torture</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label id="recommend-label">Would you recommend our music classes to a friend?</label>
-            <div class="radio-recommend-group">
-              <label>
-                <input type="radio" name="recommend" class="input-radio" value="forSure" required checked>For sure
-              </label>
-              <label>
-                <input type="radio" name="recommend" class="input-radio" value="maybe">Maybe
-              </label>
-              <label>
-                <input type="radio" name="recommend" class="input-radio" value="no">Are you kidding me?
-              </label>
-            </div>
-        </div>
-
-        <div class="form-group">
-          <label id="improvements-label">What would you like to see improved?<span class="clue">(check all that apply)</span></label>
-          <div class="checkbox-improvements-group">
-            <label>
-              <input type="checkbox" name="improvements" class="input-checkbox" value="teachingStyle">Teaching style
-            </label>
-            <label>
-              <input type="checkbox" name="improvements" class="input-checkbox" value="classSchedule">Class schedule
-            </label>
-            <label>
-              <input type="checkbox" name="improvements" class="input-checkbox" value="practicePossibilities">Practice possibilities
-            </label>
-            <label>
-              <input type="checkbox" name="improvements" class="input-checkbox" value="femaleTeachers">More female teachers
-            </label>
-            <label>
-              <input type="checkbox" name="improvements" class="input-checkbox" value="nothing">Nothing, I'm happy
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <label id="comments-label">Do you have any comments or suggestions? Let us know!</label>
-          <textarea name="comments" id="comments" class="input-textarea" placeholder="Enter your message here..."></textarea>
-        </div>
-
-        <div>
-          <button type="submit" id="submit" class="submit-button">Submit</button>
-        </div>
-
-      </form>
-
-    </div>
-  </body>
-</html>
+</html> 
