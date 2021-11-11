@@ -9,3 +9,14 @@ Language used: HTML, CSS
 Date created: September2021
 
 Hours spend:
+
+
+Learned:
+
+- Forms
+
+- Getting familiar with CSS responsiveness
+
+- CSS floating label effects
+
+- General styling 
