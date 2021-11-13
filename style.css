@@ -32,8 +32,8 @@ body::before {
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
     ),
-    /* url(https://get.wallhere.com/photo/monochrome-nature-musical-instrument-technology-piano-keyboard-string-instrument-electronic-device-electronic-instrument-musical-keyboard-digital-piano-player-piano-electric-piano-fortepiano-celesta-computer-component-87559.jpg); */
-    url(img/piano-bg.jpg);
+    url(https://get.wallhere.com/photo/monochrome-nature-musical-instrument-technology-piano-keyboard-string-instrument-electronic-device-electronic-instrument-musical-keyboard-digital-piano-player-piano-electric-piano-fortepiano-celesta-computer-component-87559.jpg);
+    /* url(img/piano-bg.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
