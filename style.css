@@ -288,8 +288,9 @@ span.clue {
     padding: 0.2em 0.4em;
     margin-top: 0.8em;
     border: 2px solid var(--clr-dark);
-    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(img/music-notes.png);
-    /* url("https://freepngimg.com/thumb/music/24577-1-music-transparent-image.png"); */
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    /* url(img/music-notes.png); */
+    url("https://freepngimg.com/thumb/music/24577-1-music-transparent-image.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -301,8 +302,9 @@ span.clue {
 }
 
 .fg__ta__input:focus {
-    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(img/music-notes.png);
-    /* url("https://freepngimg.com/thumb/music/24577-1-music-transparent-image.png"); */
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+    /* url(img/music-notes.png); */
+    url("https://freepngimg.com/thumb/music/24577-1-music-transparent-image.png");
     cursor: auto;
 }
 
